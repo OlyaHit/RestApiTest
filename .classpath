@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="target/classes" path="src/main/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Olga.Khytruk/Downloads/docs/tagsoup-1.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Olga.Khytruk/Downloads/docs/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Olga.Khytruk/Downloads/docs/hamcrest-library-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Olga.Khytruk/Downloads/docs/commons-codec-1.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Olga.Khytruk/Downloads/docs/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Olga.Khytruk/Downloads/docs/httpmime-4.5.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Olga.Khytruk/Downloads/docs/commons-lang3-3.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Olga.Khytruk/Downloads/docs/httpcore-4.4.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Olga.Khytruk/Downloads/docs/httpclient-4.5.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Olga.Khytruk/Downloads/docs/groovy-json-2.4.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Olga.Khytruk/Downloads/docs/groovy-xml-2.4.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Olga.Khytruk/Downloads/docs/groovy-2.4.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Olga.Khytruk/Downloads/docs/rest-assured-common-3.0.3-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Olga.Khytruk/Downloads/docs/rest-assured-common-3.0.3-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Olga.Khytruk/Downloads/docs/json-path-3.0.3-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Olga.Khytruk/Downloads/docs/json-path-3.0.3-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Olga.Khytruk/Downloads/docs/xml-path-3.0.3-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Olga.Khytruk/Downloads/docs/xml-path-3.0.3-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Olga.Khytruk/Downloads/docs/rest-assured-3.0.3-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Olga.Khytruk/Downloads/docs/rest-assured-3.0.3-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Olga.Khytruk/Downloads/docs/rest-assured-3.0.3.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
