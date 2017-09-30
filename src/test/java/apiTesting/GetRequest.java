@@ -43,7 +43,7 @@ public String url2= "http://localhost:3000/posts";
 	assertEquals(200,resp.getStatusCode());
 	System.out.println(resp.asString());	
 	}
-	@Ignore
+	
 	@Test
 	public void getRequestExtractResult(){
 		Response response=
@@ -66,6 +66,7 @@ public String url2= "http://localhost:3000/posts";
 	
 }
 	//Parse Json to JavaObject
+	@Ignore
 	@Test
 	public void getRequestJavaObjectMap () {
 		Response response =

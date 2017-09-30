@@ -18,22 +18,23 @@ public class PostRequest {
 	@Test
 	public void postNewGuyPost(){
 		
-		Posts newPost = new Posts("3","Olga's post1","My second post");
-	
+		Posts newPost = new Posts("3","Olga's post1","Olga");
+		Response response=
 		given().
 		when().
 		contentType(ContentType.JSON).
-		body(newPost).
-		post(url);
+		body(newPost)
+		.post(url);
 		
-		//System.out.println(newPost);
+		
+		System.out.println(response.asString());
 		
 	}
 	@Ignore
 	@Test
 	public void putUpdatePost(){
 		
-		Posts newPost = new Posts("3","Olga's update","My second was updated");
+		Posts newPost = new Posts("3","Olga's update","Olga");
 		Response response=
 		given().
 		when().
