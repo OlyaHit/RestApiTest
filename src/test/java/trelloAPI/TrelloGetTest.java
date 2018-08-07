@@ -20,9 +20,13 @@ import trelloConfig.BoardCheckList;
 import trelloConfig.CheckList;
 import static org.hamcrest.Matchers.*;
 import static org.hamcrest.MatcherAssert.*;
+
+@Ignore
 public class TrelloGetTest {
+
 	public String url ="https://api.trello.com/1/boards";
-	@Ignore
+
+
 	@Test
 	public void getBoardName(){
 		Response response=
@@ -30,14 +34,15 @@ public class TrelloGetTest {
 		pathParam("id", "FnUX37kg").
 		pathParam("field", "name").
 		queryParam("key", "8e38ca0aae0df85f1c7353a6c73188d0").
-		queryParam("token","772bd656d696570c8a001b6d8499bb60b08fdc604f77a8b26dd550fe23b43303").
+		queryParam("token","db479699606440ccaf2c78f2c1f16c7368e34e455a5c2c119dcdff6bc48df875").
 		when().
 		get("https://api.trello.com/1/boards/{id}/{field}");
 		
 		response.then().body("_value", equalTo("myLIST"));
 		System.out.println(response.asString());	
 	}
-	@Ignore
+
+
 	@Test
 	public void getBoardStarts(){
 		Response response=
@@ -46,14 +51,14 @@ public class TrelloGetTest {
 				queryParam("fields", "id").
 				queryParam("boardStars", "mine").
 				queryParam("key", "8e38ca0aae0df85f1c7353a6c73188d0").
-				queryParam("token","772bd656d696570c8a001b6d8499bb60b08fdc604f77a8b26dd550fe23b43303").
+				queryParam("token","db479699606440ccaf2c78f2c1f16c7368e34e455a5c2c119dcdff6bc48df875").
 				when().
 				get("https://api.trello.com/1/boards/{id}");
 		
 		response.then().body("id", containsString("84116"));
 		System.out.println(response.asString());	
 	}
-	@Ignore
+
 	@Test
 	public void getBordCheckList(){
 		Response response=
@@ -62,7 +67,7 @@ public class TrelloGetTest {
 				pathParam("field", "checklists").
 				queryParam("checkItem_fields", "name").
 				queryParam("fields", "name").
-				queryParam("token","772bd656d696570c8a001b6d8499bb60b08fdc604f77a8b26dd550fe23b43303").
+				queryParam("token","db479699606440ccaf2c78f2c1f16c7368e34e455a5c2c119dcdff6bc48df875").
 				queryParam("key", "8e38ca0aae0df85f1c7353a6c73188d0").
 				when().
 				get("https://api.trello.com/1/boards/{id}/{field}");
@@ -79,14 +84,14 @@ public class TrelloGetTest {
 		
 		System.out.println(response.asString());
 	}
-	@Ignore
+
 	@Test
 	public void getList(){
 		Response response=
 				given().
 				pathParam("id", "FnUX37kg").
 				pathParam("field", "lists").
-				queryParam("token","772bd656d696570c8a001b6d8499bb60b08fdc604f77a8b26dd550fe23b43303").
+				queryParam("token","db479699606440ccaf2c78f2c1f16c7368e34e455a5c2c119dcdff6bc48df875").
 				queryParam("key", "8e38ca0aae0df85f1c7353a6c73188d0").
 				when().
 				get("https://api.trello.com/1/boards/{id}/{field}");
@@ -95,20 +100,20 @@ public class TrelloGetTest {
 		CheckList[] checks = response.as(CheckList[].class, ObjectMapperType.GSON);
 		List<CheckList> checksListM = new ArrayList<CheckList>(Arrays.asList(checks));
 		assertThat(checks,arrayWithSize(3));
-		CheckList expected = new CheckList("59b24bf9e43dfe3b56584117", "Нужно сделать",
+		CheckList expected = new CheckList("59b24bf9e43dfe3b56584117", "пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ",
 				false, "59b24bf9e43dfe3b56584116", 16384, false);
 				
 		Assert.assertTrue(checksListM.get(0).equals(expected));
 		System.out.println(response.asString());
 	}
-	@Ignore
+	
 	@Test
 	public void getListValidate(){
 		Response response=
 				given().
 				pathParam("id", "FnUX37kg").
 				pathParam("field", "lists").
-				queryParam("token","772bd656d696570c8a001b6d8499bb60b08fdc604f77a8b26dd550fe23b43303").
+				queryParam("token","db479699606440ccaf2c78f2c1f16c7368e34e455a5c2c119dcdff6bc48df875").
 				queryParam("key", "8e38ca0aae0df85f1c7353a6c73188d0").
 				when().
 				get("https://api.trello.com/1/boards/{id}/{field}");
@@ -116,10 +121,10 @@ public class TrelloGetTest {
 		
 		CheckList[] checks = response.as(CheckList[].class, ObjectMapperType.GSON);
 		List<CheckList> checksListM = new ArrayList<CheckList>(Arrays.asList(checks));
-		Set<String> expectedValues = new HashSet<String>(Arrays.asList("Нужно сделать", "В процессе", "Готово"));
+		Set<String> expectedValues = new HashSet<String>(Arrays.asList("пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅ"));
 		assertEquals(expectedValues, 
 				checksListM.stream().map(CheckList::getName).collect(Collectors.toSet()));
-		CheckList expected = new CheckList("59b24bf9e43dfe3b56584117", "Нужно сделать",
+		CheckList expected = new CheckList("59b24bf9e43dfe3b56584117", "пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ",
 				false, "59b24bf9e43dfe3b56584116", 16384, false);
 				
 		 assertThat(checksListM.get(0), equalTo(expected));
@@ -132,7 +137,7 @@ public class TrelloGetTest {
 				given().
 				pathParam("id", "FnUX37kg").
 				pathParam("field", "lists").
-				queryParam("token","772bd656d696570c8a001b6d8499bb60b08fdc604f77a8b26dd550fe23b43303").
+				queryParam("token","db479699606440ccaf2c78f2c1f16c7368e34e455a5c2c119dcdff6bc48df875").
 				queryParam("key", "8e38ca0aae0df85f1c7353a6c73188d0").
 				when().
 				get("https://api.trello.com/1/boards/{id}/{field}");
@@ -140,11 +145,11 @@ public class TrelloGetTest {
 		
 		CheckList[] checksActual = response.as(CheckList[].class, ObjectMapperType.GSON);
 		CheckList[] checksExpected = { 
-				new CheckList("59b24bf9e43dfe3b56584117", "Нужно сделать",
+				new CheckList("59b24bf9e43dfe3b56584117", "пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ",
 						false, "59b24bf9e43dfe3b56584116", 16384, false),
-				new CheckList("59b24bf9e43dfe3b56584118", "В процессе",
+				new CheckList("59b24bf9e43dfe3b56584118", "пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ",
 						false, "59b24bf9e43dfe3b56584116", 32768, false),
-				new CheckList("59b24bf9e43dfe3b56584119", "Готово",
+				new CheckList("59b24bf9e43dfe3b56584119", "пїЅпїЅпїЅпїЅпїЅпїЅ",
 						false, "59b24bf9e43dfe3b56584116", 49152, false)
 		};
 		

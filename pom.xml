@@ -12,6 +12,9 @@
 
 	<properties>
 		<jdk.version>1.8</jdk.version>
+		<project.source.version>1.8</project.source.version>
+		<project.target.version>1.8</project.target.version>
+		<project.encoding>UTF-8</project.encoding>
 		<log4j.version>1.2.17</log4j.version>
 		<allure.version>1.4.14</allure.version>
 		<aspectj.version>1.7.4</aspectj.version>
@@ -40,14 +43,18 @@
 						<artifactId>aspectjweaver</artifactId>
 						<version>${aspectj.version}</version>
 					</dependency>
-					<dependency>
-						<groupId>org.testng</groupId>
-						<artifactId>testng</artifactId>
-						<version>6.9.10</version>
-					</dependency>
 
-					
 				</dependencies>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.0</version>
+				<configuration>
+					<encoding>${project.encoding}</encoding>
+					<source>${project.source.version}</source>
+					<target>${project.target.version}</target>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
@@ -67,47 +74,34 @@
 	</reporting>
 
 	<dependencies>
-<dependency>
-						<groupId>org.codehaus.groovy</groupId>
-						<artifactId>groovy-all</artifactId>
-						<version>2.4.7</version>
-					</dependency>
-
-					<dependency>
-						<groupId>com.google.code.gson</groupId>
-						<artifactId>gson</artifactId>
-						<version>2.8.0</version>
-					</dependency>
-
-					<dependency>
-						<groupId>io.rest-assured</groupId>
-						<artifactId>rest-assured</artifactId>
-						<version>3.0.3</version>
-						<scope>test</scope>
-					</dependency>
-					<dependency>
-						<groupId>io.rest-assured</groupId>
-						<artifactId>json-path</artifactId>
-						<version>3.0.3</version>
-					</dependency>
-					<dependency>
-						<groupId>io.rest-assured</groupId>
-						<artifactId>json-schema-validator</artifactId>
-						<version>3.0.3</version>
-						<scope>test</scope>
-					</dependency>
-
-					<dependency>
-						<groupId>org.twitter4j</groupId>
-						<artifactId>twitter4j-core</artifactId>
-						<version>4.0.6</version>
-					</dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>3.1.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>json-path</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>json-schema-validator</artifactId>
+            <version>3.1.0</version>
+            <scope>test</scope>
+        </dependency>
 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>${log4j.version}</version>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.9.5</version>
 		</dependency>
-
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+			<version>3.5.2</version>
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
