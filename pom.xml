@@ -119,12 +119,5 @@
 			<artifactId>allure-junit-adaptor</artifactId>
 			<version>${allure.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>com.github.scribejava</groupId>
-			<artifactId>scribejava-apis</artifactId>
-			<version>2.5.3</version>
-		<scope>test</scope>
-		</dependency>
 	</dependencies>
-
 </project>
