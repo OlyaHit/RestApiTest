@@ -1,0 +1,12 @@
+models\boardModels\BoardResponse.class
+controllers\AbstractController.class
+models\listModel\ListRequest.class
+models\boardModels\LabelNames.class
+models\boardModels\BoardRequest.class
+trelloConfig\Configs.class
+models\boardModels\Prefs.class
+controllers\boardControllers\BoardController.class
+models\boardModels\Limits.class
+controllers\boardControllers\ListController.class
+models\listModel\Limits.class
+models\listModel\ListResponse.class
